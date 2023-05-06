@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ramenTimer", "ramenTimer\ramenTimer.csproj", "{8EB8CC93-F7C7-4DDF-9812-87F31F97355E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ramenTimer.Tests", "ramenTimer.Tests\ramenTimer.Tests.csproj", "{D1330433-8B91-436B-A957-B1966478A6FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{8EB8CC93-F7C7-4DDF-9812-87F31F97355E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB8CC93-F7C7-4DDF-9812-87F31F97355E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EB8CC93-F7C7-4DDF-9812-87F31F97355E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D1330433-8B91-436B-A957-B1966478A6FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1330433-8B91-436B-A957-B1966478A6FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1330433-8B91-436B-A957-B1966478A6FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1330433-8B91-436B-A957-B1966478A6FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
