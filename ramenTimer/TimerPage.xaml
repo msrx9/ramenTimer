@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ramenTimer.TimerPage"
+             Title="TimerPage">
+
+    <StackLayout
+        Spacing="10"
+        VerticalOptions="Center">
+
+        <Label Text="00:00"
+               FontSize="36"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               x:Name="MinutesLabel" />
+
+        <ProgressBar
+            x:Name="PrgBar"
+            Progress="0"
+            ProgressColor="Orange" />
+
+        <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            Spacing="10">
+
+            <Button
+                WidthRequest="100"
+                x:Name="M1Button"
+                Clicked="OnMinusButton"
+                Text="-1分" />
+
+            <Button
+                WidthRequest="100"
+                x:Name="StartButton"
+                Clicked="OnStartButton"
+                Text="開始" />
+
+            <Button
+                WidthRequest="100"
+                x:Name="P1Button"
+                Clicked="OnPlusButton"
+                Text="+1分" />
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
