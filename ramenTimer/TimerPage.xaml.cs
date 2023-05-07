@@ -11,9 +11,12 @@ public partial class TimerPage : ContentPage
     // 実行中ならtrue
     private bool _isLive = false;
 
+    private IFlagControl _flagControl;
+
 
     public TimerPage()
     {
+        _flagControl = new FlagControl();
         InitializeComponent();
         SetLabel();
     }
@@ -33,7 +36,7 @@ public partial class TimerPage : ContentPage
     /// </summary>
     private void Toggle()
     {
-        _isLive = !_isLive;
+        _isLive = _flagControl.Toggle(_isLive);
 
         // ボタン名を変更する
         StartButton.Text = (_isLive) ? "停止" : "開始";
@@ -54,7 +57,7 @@ public partial class TimerPage : ContentPage
             SetLabel();
 
             // タイムアップ処理
-            if ((_leftTime.Minute | _leftTime.Second | _leftTime.Millisecond) == 0)
+            if (_flagControl.IsTimeout(_leftTime))
             {
                 Toggle();
                 await DisplayAlert("終了", "ラーメンができました", "OK");
