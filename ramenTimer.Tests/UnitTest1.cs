@@ -2,57 +2,61 @@
 
 public class UnitTest1
 {
-    [Fact(DisplayName = "ToggleFlag(): TrueをFalseにトグル")]
-    public void ToggleFlag_ShouldSetFlagTrueToFalse()
+    [Fact(DisplayName = "Toggle(): TrueをFalseにトグル")]
+    public void Toggle_ShouldSetFlagTrueToFalse()
     {
         // Arrange
+        var flagControl = new FlagControl();
         bool flag = true;
 
         // Act
-        var target = new FlagControl();
+        var actual = flagControl.Toggle(flag);
 
         // Assert
-        Assert.False(target.Toggle(flag));
+        Assert.False(actual);
     }
 
-    [Fact(DisplayName = "ToggleFlag(): FalseをTrueにトグル")]
-    public void ToggleFlag_ShouldSetFlagFalseToTrue()
+    [Fact(DisplayName = "Toggle(): FalseをTrueにトグル")]
+    public void Toggle_ShouldSetFlagFalseToTrue()
     {
         // Arrange
+        var flagControl = new FlagControl();
         bool flag = false;
 
         // Act
-        var target = new FlagControl();
+        var actual = flagControl.Toggle(flag);
 
         // Assert
-        Assert.True(target.Toggle(flag));
+        Assert.True(actual);
     }
 
-    [Fact(DisplayName = "IsTimeout(): タイムアップ")]
+    [Fact(DisplayName = "IsTimeout(): タイムアップのためtrueを返す")]
     public void IsTimeoutTrue_ShouldReturnTrue()
     {
         // Arrange
         TimeOnly timer = new TimeOnly(1, 0);
+        var flagControl = new FlagControl();
+
 
         // Act
-        var test = new FlagControl();
-        var ret = test.IsTimeout(timer);
+        var ret = flagControl.IsTimeout(timer);
 
         // Assert
         Assert.True(ret);
     }
 
-    [Fact(DisplayName = "IsTimeout(): カウント中")]
+    [Fact(DisplayName = "IsTimeout(): カウント中のためfalseを返す")]
     public void IsTimeoutFalse_ShouldReturnTrue()
     {
         // Arrange
         TimeOnly timer = new TimeOnly(0, 0);
         int milliseconds = 1;
         timer = timer.Add(TimeSpan.FromMilliseconds(milliseconds));
+        var flagControl = new FlagControl();
+
 
         // Act
-        var test = new FlagControl();
-        var ret = test.IsTimeout(timer);
+        var ret = flagControl.IsTimeout(timer);
 
         // Assert
         Assert.False(ret);
