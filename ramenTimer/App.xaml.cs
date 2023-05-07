@@ -2,11 +2,11 @@
 
 public partial class App : Application
 {
-	public App()
+	public App(TimerPage timerPage)
 	{
 		InitializeComponent();
 
-		MainPage = new TimerPage();
+		MainPage = timerPage;
 	}
 }
 
