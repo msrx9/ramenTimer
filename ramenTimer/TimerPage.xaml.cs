@@ -14,9 +14,9 @@ public partial class TimerPage : ContentPage
     private IFlagControl _flagControl;
 
 
-    public TimerPage()
+    public TimerPage(IFlagControl fc)
     {
-        _flagControl = new FlagControl();
+        _flagControl = fc;
         InitializeComponent();
         SetLabel();
     }
